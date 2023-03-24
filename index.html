@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Богоугодный ИИ ☦️</title>
+    <style>
+      body {
+        background-image: url("1.jpeg");
+        background-position: initial;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100%; /* Enlarge the image size */
+        background-color: #000000; /* Set the background color */
+        margin: 0;
+        font-family: Open Sans;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        margin-top: 0;
+        color: gold;
+      }
+
+      input[type="text"],
+      p {
+        display: block;
+        width: 80%;
+        margin: 50px auto;
+        padding: 10px;
+        font-size: 20px;
+        text-align: center; /* Center the text */
+      }
+
+      button {
+        font-family: Lora;
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 20px;
+        background-color: gold;
+        border: none;
+      }
+
+      p {
+        color: white; /* Change the text color to white */
+      }
+
+      #textInput::placeholder {
+        font-family: Comfortaa; /* Set the font family for placeholder text */
+        font-size: 20px;
+        color: #ccc; /* Set the color of the placeholder text */
+      }
+
+      #textInput {
+        font-family: Comfortaa; /* Set the font family for input field text */
+      }
+    </style>
+    <script>
+      function send() {
+        let textInput = document.getElementById("textInput");
+        let response = document.getElementById("response");
+        let sendButton = document.getElementById("sendButton");
+        let clearButton = document.getElementById("clearButton");
+        let audio = document.getElementById("audio");
+
+        if (textInput.value.trim().endsWith("?")) {
+          response.innerHTML = "Пути Господни неисповедимы ☝🏼";
+          sendButton.style.display = "none";
+          clearButton.style.display = "block";
+          audio.currentTime = 0;
+          audio.play();
+          textInput.disabled = true; // disable the text input field
+        } else {
+          alert(
+            "Пожалуйста, задайте вопрос, оканчивающийся знаком вопроса."
+          );
+        }
+      }
+
+      function clearText() {
+        let textInput = document.getElementById("textInput");
+        let response = document.getElementById("response");
+        let sendButton = document.getElementById("sendButton");
+        let clearButton = document.getElementById("clearButton");
+        let audio = document.getElementById("audio");
+
+        textInput.value = "";
+        response.innerHTML = "";
+        sendButton.style.display = "block";
+        clearButton.style.display = "none";
+        audio.pause();
+        textInput.disabled = false; // enable the text input field
+      }
+    </script>
+  </head>
+  <body>
+  <h1>Православный Искусственный Интеллект☦️</h1>
+  <input type="text" id="textInput" placeholder="Введите вопрос">
+  <button id="sendButton" onclick="send()">Спросить🔔</button>
+  <button id="clearButton" onclick="clearText()" style="display:none;">🙏Принять🙏</button>
+    <p id="response"></p>
+    <audio id="audio" src="Господи_помилуй.mp3" autoplay></audio>
+</body>
+</html>
